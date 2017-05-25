@@ -372,6 +372,6 @@ Chỉ với 1 dòng code như trên sẽ tương đương với 1 class trong Ja
 Hiện tại thì `Android` cũng đã support `Java 8` với biểu thức `Lambda`, một điều rất tuyệt vời `more lambdas, more beautiful`.
 
 ### References
-..* https://kotlinlang.org/docs/reference/faq.html
-..* https://kotlinlang.org/docs/reference/basic-syntax.html
-..* https://medium.com/@octskyward/why-kotlin-is-my-next-programming-language-c25c001e26e3
+* [https://kotlinlang.org/docs/reference/faq.html](https://kotlinlang.org/docs/reference/faq.html)
+* [https://kotlinlang.org/docs/reference/basic-syntax.html](https://kotlinlang.org/docs/reference/basic-syntax.html)
+* [https://medium.com/@octskyward/why-kotlin-is-my-next-programming-language-c25c001e26e3](https://medium.com/@octskyward/why-kotlin-is-my-next-programming-language-c25c001e26e3)
