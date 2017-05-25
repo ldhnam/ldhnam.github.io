@@ -9,7 +9,10 @@ h1 {
 }
 
 h1:before {
-  content: "#"
+    color: #CCC;
+    margin-left: -20px;
+    margin-right: 10px;
+    content: "#";
 }
 
 h2 {
