@@ -18,6 +18,7 @@
         });
 
         var open = function(url) {
+            if (url == "./posts/.md") url = "./posts/home.md"
             return new Promise(function(resolve, reject) {
                 var xhr = new XMLHttpRequest;
                 xhr.open('GET', url, true);
