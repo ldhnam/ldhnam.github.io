@@ -276,15 +276,9 @@ h3 {
   counter-increment: second;
   counter-reset: third;
 }
-h3:before {
-  content: counter(first) "." counter(second) ".";
-}
 
 h4 {
   counter-increment: third;
-}
-h4:before {
-  content: counter(first) "." counter(second) "." counter(third) ".";
 }
 
 .box-green {
