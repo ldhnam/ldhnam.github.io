@@ -90,7 +90,7 @@ code.math {
 
 a {
     text-decoration: none;
-    color: #3498db;
+    color: #fff;
 }
 
 a:hover {
@@ -112,6 +112,11 @@ html, body {
     min-height: calc(100% - 260px);
     margin: 0 auto;
     padding: 20px;
+}
+
+.main a {
+  text-decoration: none;
+  color: #3498db;
 }
 
 .header {
