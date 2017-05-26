@@ -84,7 +84,7 @@ code {
   padding: initial;
 }
 
-.hljs {
+.hljs-keyword {
     background: none !important;
     overflow-x: hidden !important;
 }
