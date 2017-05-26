@@ -1,318 +1,318 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><title>Untitled Document.md</title><style></style></head><body id="preview">
 <h3><a id="Kotlin_Language_l_g__0"></a>Kotlin Language là gì ?</h3>
-<p><code>Kotlin</code> là một ngôn ngữ ngữ kiểu tĩnh dành cho <code>Java Virtual Machine</code>. Nó được tạo ra bởi <code>JetBrains</code>, <code>Kotlin</code> sẽ chạy trên JVM và sử dụng các công cụ và thư viện hiện có của <em>Java</em>. Và ngược lại <em>Java</em> cũng có thể sử dụng các item được xây dựng trong <code>Kotlin</code>.</p>
+<p><code>Kotlin</code> là một ngôn ngữ ngữ kiểu tĩnh dành cho <code>Java Virtual Machine</code>. Nó được tạo ra bởi <code>JetBrains</code>, <code>Kotlin</code> sẽ chạy trên JVM và sử dụng các công cụ và thư viện hiện có của <code>Java</code>. Và ngược lại <code>Java</code> cũng có thể sử dụng các item được xây dựng trong <code>Kotlin</code>.</p>
 <p><code>Statically-typed</code> không có nghĩa chúng ta phải khai báo tất cả các biến lúc đầu trước khi sử dụng chúng. Các biến có thể được khởi tạo bất cứ nơi nào trong chương trình và chúng ta có thể sử dụng chúng bất cứ nơi nào khi cần.</p>
 <h3><a id="Tng_quan_v_Kotlin_6"></a>Tổng quan về Kotlin</h3>
 <h4><a id="nh_ngha_function_Defining_function_8"></a>Định nghĩa function (Defining function)</h4>
 <p>Function có 2 tham số <code>Int</code> với kết quả trả về là <code>Int</code>:</p>
-<pre><code>    fun sum(a: Int, b: Int): Int {
-        return a + b
-    }
+<pre><code>fun sum(a: Int, b: Int): Int {
+    return a + b
+}
 </code></pre>
 <p>Function có kiểu kết quả trả về được suy ra từ thân của biểu thức:</p>
 <pre><code>    fun sum(a: Int, b: Int) = a + b
 </code></pre>
 <p>Function trả về kết quả vô nghĩa:</p>
-<pre><code>    fun printSum(a: Int, b: Int): Unit {
-        println(&quot;sum of $a and $b is ${a + b}&quot;)
-    }
+<pre><code>fun printSum(a: Int, b: Int): Unit {
+    println(&quot;sum of $a and $b is ${a + b}&quot;)
+}
 </code></pre>
 <p>Kiểu trả về <code>Unit</code> có thể bỏ qua:</p>
-<pre><code>    fun printSum(a: Int, b: Int) {
-        println(&quot;sum of $a and $b is ${a + b}&quot;)
-    }
+<pre><code>fun printSum(a: Int, b: Int) {
+    println(&quot;sum of $a and $b is ${a + b}&quot;)
+}
 </code></pre>
 <h4><a id="nh_ngha_bin_cc_b_32"></a>Định nghĩa biến cục bộ</h4>
 <p>Biến cục bộ chỉ gán giá trị một lần (read-only):</p>
-<pre><code>    val a: Int = 1  // immediate assignment
-    val b = 2   // `Int` type is inferred
-    val c: Int  // Type required when no initializer is provided
-    c = 3       // deferred assignment
+<pre><code>val a: Int = 1  // immediate assignment
+val b = 2   // `Int` type is inferred
+val c: Int  // Type required when no initializer is provided
+c = 3       // deferred assignment
 </code></pre>
 <p>Biến có thể thay đổi:</p>
-<pre><code>    var x = 5 // `Int` type is inferred
-    x += 1
+<pre><code>var x = 5 // `Int` type is inferred
+x += 1
 </code></pre>
 <h4><a id="Comments_47"></a>Comments</h4>
 <p>Giống như <code>Java</code> và <code>JavaScript</code>, <code>Kotlin</code> hỗ trợ end-of-line và block comments.</p>
-<pre><code>    // This is an end-of-line comment
+<pre><code>// This is an end-of-line comment
 
-    /* This is a block comment
-    on multiple lines. */
+/* This is a block comment
+on multiple lines. */
 </code></pre>
 <p>Không giống <code>Java</code>, block comments trong <code>Kotlin</code> có thể lồng nhau.</p>
 <h4><a id="S_dng_String_templates_57"></a>Sử dụng String templates</h4>
-<pre><code>    var a = 1
-    // simple name in template:
-    val s1 = &quot;a is $a&quot; 
+<pre><code>var a = 1
+// simple name in template:
+val s1 = &quot;a is $a&quot; 
 
-    a = 2
-    // arbitrary expression in template:
-    val s2 = &quot;${s1.replace(&quot;is&quot;, &quot;was&quot;)}, but now is $a&quot;
+a = 2
+// arbitrary expression in template:
+val s2 = &quot;${s1.replace(&quot;is&quot;, &quot;was&quot;)}, but now is $a&quot;
 </code></pre>
 <h4><a id="S_dng_cc_biu_thc_c_iu_kin_68"></a>Sử dụng các biểu thức có điều kiện</h4>
-<pre><code>    fun maxOf(a: Int, b: Int): Int {
-        if (a &gt; b) {
-            return a
-        } else {
-            return b
-        }
+<pre><code>fun maxOf(a: Int, b: Int): Int {
+    if (a &gt; b) {
+        return a
+    } else {
+        return b
     }
+}
 </code></pre>
 <p>Sử dụng <code>if</code> như một biểu thức:</p>
-<pre><code>    fun maxOf(a: Int, b: Int) = if (a &gt; b) a else b
+<pre><code>fun maxOf(a: Int, b: Int) = if (a &gt; b) a else b
 </code></pre>
 <h4><a id="S_dng_cc_gi_tr_nullable_v_check_null_83"></a>Sử dụng các giá trị nullable và check null</h4>
 <p>Một tham chiếu phải được đánh dấu rõ ràng là <code>nullable</code> khi giá trị <code>null</code> là có thể.<br>
 Trả về <code>null</code> nếu <code>str</code> không giữ một số nguyên:</p>
-<pre><code>    fun parseInt(str: String): Int? {
-        // ...
-    }
+<pre><code>fun parseInt(str: String): Int? {
+    // ...
+}
 </code></pre>
 <p>Sử dụng function trả về giá trị <code>nullable</code>:</p>
-<pre><code>    fun printProduct(arg1: String, arg2: String) {
-        val x = parseInt(arg1)
-        val y = parseInt(arg2)
+<pre><code>fun printProduct(arg1: String, arg2: String) {
+    val x = parseInt(arg1)
+    val y = parseInt(arg2)
 
-        // Using `x * y` yields error because they may hold nulls.
-        if (x != null &amp;&amp; y != null) {
-            // x and y are automatically cast to non-nullable after null check
-            println(x * y)
-        }
-        else {
-            println(&quot;either '$arg1' or '$arg2' is not a number&quot;)
-        }    
+    // Using `x * y` yields error because they may hold nulls.
+    if (x != null &amp;&amp; y != null) {
+        // x and y are automatically cast to non-nullable after null check
+        println(x * y)
     }
+    else {
+        println(&quot;either '$arg1' or '$arg2' is not a number&quot;)
+    }    
+}
 </code></pre>
 <p>hoặc</p>
-<pre><code>    // ...
-    if (x == null) {
-        println(&quot;Wrong number format in arg1: '${arg1}'&quot;)
-        return
-    }
-    if (y == null) {
-        println(&quot;Wrong number format in arg2: '${arg2}'&quot;)
-        return
-    }
+<pre><code>// ...
+if (x == null) {
+    println(&quot;Wrong number format in arg1: '${arg1}'&quot;)
+    return
+}
+if (y == null) {
+    println(&quot;Wrong number format in arg2: '${arg2}'&quot;)
+    return
+}
 
-    // x and y are automatically cast to non-nullable after null check
-    println(x * y)
+// x and y are automatically cast to non-nullable after null check
+println(x * y)
 </code></pre>
 <h4><a id="Kim_tra_v_t_ng_p_kiu_123"></a>Kiểm tra và tự động ép kiểu</h4>
 <p>Toán tử <code>is</code> kiểm tra nếu một biểu thức là một thể hiện của một kiểu. Nếu một biến cục bộ <code>immutable</code> hoặc một thuộc tính được kiểm tra cho một kiểu cụ thể thì không cần ép kiểu một cách rõ ràng:</p>
-<pre><code>    fun getStringLength(obj: Any): Int? {
-        if (obj is String) {
-            // `obj` is automatically cast to `String` in this branch
-            return obj.length
-        }
-
-        // `obj` is still of type `Any` outside of the type-checked branch
-        return null
-    }
-</code></pre>
-<p>hoặc</p>
-<pre><code>    fun getStringLength(obj: Any): Int? {
-        if (obj !is String) return null
-
+<pre><code>fun getStringLength(obj: Any): Int? {
+    if (obj is String) {
         // `obj` is automatically cast to `String` in this branch
         return obj.length
     }
-</code></pre>
-<p>thậm chí hoặc</p>
-<pre><code>    fun getStringLength(obj: Any): Int? {
-        // `obj` is automatically cast to `String` on the right-hand side of `&amp;&amp;`
-        if (obj is String &amp;&amp; obj.length &gt; 0) {
-            return obj.length
-        }
 
-        return null
-    }
-</code></pre>
-<h4><a id="S_dng_vng_lp_for_157"></a>Sử dụng vòng lặp for</h4>
-<pre><code>    val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwi&quot;)
-    for (item in items) {
-        println(item)
-    }
+    // `obj` is still of type `Any` outside of the type-checked branch
+    return null
+}
 </code></pre>
 <p>hoặc</p>
-<pre><code>    val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwi&quot;)
-    for (index in items.indices) {
-        println(&quot;item at $index is ${items[index]}&quot;)
+<pre><code>fun getStringLength(obj: Any): Int? {
+    if (obj !is String) return null
+
+    // `obj` is automatically cast to `String` in this branch
+    return obj.length
+}
+</code></pre>
+<p>thậm chí hoặc</p>
+<pre><code>fun getStringLength(obj: Any): Int? {
+    // `obj` is automatically cast to `String` on the right-hand side of `&amp;&amp;`
+    if (obj is String &amp;&amp; obj.length &gt; 0) {
+        return obj.length
     }
+
+    return null
+}
+</code></pre>
+<h4><a id="S_dng_vng_lp_for_157"></a>Sử dụng vòng lặp for</h4>
+<pre><code>val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwi&quot;)
+for (item in items) {
+    println(item)
+}
+</code></pre>
+<p>hoặc</p>
+<pre><code>val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwi&quot;)
+for (index in items.indices) {
+    println(&quot;item at $index is ${items[index]}&quot;)
+}
 </code></pre>
 <h4><a id="S_dng_vng_lp_white_172"></a>Sử dụng vòng lặp white</h4>
-<pre><code>    val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwi&quot;)
-    var index = 0
-    while (index &lt; items.size) {
-        println(&quot;item at $index is ${items[index]}&quot;)
-        index++
-    }
+<pre><code>val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwi&quot;)
+var index = 0
+while (index &lt; items.size) {
+    println(&quot;item at $index is ${items[index]}&quot;)
+    index++
+}
 </code></pre>
 <h4><a id="S_dng_biu_thc_when_182"></a>Sử dụng biểu thức when</h4>
-<pre><code>    fun describe(obj: Any): String =
-    when (obj) {
-        1          -&gt; &quot;One&quot;
-        &quot;Hello&quot;    -&gt; &quot;Greeting&quot;
-        is Long    -&gt; &quot;Long&quot;
-        !is String -&gt; &quot;Not a string&quot;
-        else       -&gt; &quot;Unknown&quot;
-    }
+<pre><code>fun describe(obj: Any): String =
+when (obj) {
+    1          -&gt; &quot;One&quot;
+    &quot;Hello&quot;    -&gt; &quot;Greeting&quot;
+    is Long    -&gt; &quot;Long&quot;
+    !is String -&gt; &quot;Not a string&quot;
+    else       -&gt; &quot;Unknown&quot;
+}
 </code></pre>
 <h4><a id="S_dng_dy_ranges_194"></a>Sử dụng dãy (ranges)</h4>
 <p>Để kiểm tra một số có thuộc một dãy, sử dụng toán tử <code>in</code>:</p>
-<pre><code>    val x = 10
-    val y = 9
-    if (x in 1..y+1) {
-        println(&quot;fits in range&quot;)
-    }
+<pre><code>val x = 10
+val y = 9
+if (x in 1..y+1) {
+    println(&quot;fits in range&quot;)
+}
 </code></pre>
 <p>Kiểm tra một số nằm ngoài dãy:</p>
-<pre><code>    val list = listOf(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
+<pre><code>val list = listOf(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
 
-    if (-1 !in 0..list.lastIndex) {
-        println(&quot;-1 is out of range&quot;)
-    }
-    if (list.size !in list.indices) {
-        println(&quot;list size is out of valid list indices range too&quot;)
-    }
+if (-1 !in 0..list.lastIndex) {
+    println(&quot;-1 is out of range&quot;)
+}
+if (list.size !in list.indices) {
+    println(&quot;list size is out of valid list indices range too&quot;)
+}
 </code></pre>
 <p>Lặp trong một dãy:</p>
-<pre><code>    fun main(args: Array&lt;String&gt;) {
-        for (x in 1..5) {
-            print(x)
-        }
+<pre><code>fun main(args: Array&lt;String&gt;) {
+    for (x in 1..5) {
+        print(x)
     }
+}
 </code></pre>
 <p>hoặc với <code>step</code></p>
-<pre><code>    for (x in 1..10 step 2) {
-        print(x)
-    }
-    for (x in 9 downTo 0 step 3) {
-        print(x)
-    }
+<pre><code>for (x in 1..10 step 2) {
+    print(x)
+}
+for (x in 9 downTo 0 step 3) {
+    print(x)
+}
 </code></pre>
 <h4><a id="S_dng_collections_231"></a>Sử dụng collections</h4>
 <p>Lặp trên một collection</p>
-<pre><code>    for (item in items) {
-        println(item)
-    }
+<pre><code>for (item in items) {
+    println(item)
+}
 </code></pre>
 <p>Kiểm tra nếu một collection có chứa một đối tượng, sử dụng toán tử <code>in</code>:</p>
-<pre><code>    when {
-        &quot;orange&quot; in items -&gt; println(&quot;juicy&quot;)
-        &quot;apple&quot; in items -&gt; println(&quot;apple is fine too&quot;)
-    }
+<pre><code>when {
+    &quot;orange&quot; in items -&gt; println(&quot;juicy&quot;)
+    &quot;apple&quot; in items -&gt; println(&quot;apple is fine too&quot;)
+}
 </code></pre>
 <p>Sử dụng <code>lambda expressions</code> để <code>filter</code> và <code>map</code> collection:</p>
-<pre><code>    fruits
-    .filter { it.startsWith(&quot;a&quot;) }
-    .sortedBy { it }
-    .map { it.toUpperCase() }
-    .forEach { println(it) }
+<pre><code>fruits
+.filter { it.startsWith(&quot;a&quot;) }
+.sortedBy { it }
+.map { it.toUpperCase() }
+.forEach { println(it) }
 </code></pre>
 <h4><a id="Null_Safety_254"></a>Null Safety</h4>
 <p>Một trong những cạm bẫy phổ biến trong các ngôn ngữ lập trình, bao gồm cả <code>Java</code> là cho phép 1 thành phần nào đó được <code>null</code>. Nếu không chắc chắn thành phần đó được phép <code>null</code> hay không sẽ rất dễ xảy ra lỗi không lường trước được, gây nguy hiểm cho hệ thống của bạn. Cụ thể, trong <code>Java</code> sẽ gây ra 1 <code>exception</code> là <code>NullPoiterException</code>.<br>
 <code>Kotlin</code> nhằm mục đích xóa bỏ <code>NullPoiterException</code>. <code>Kotlin</code> cung cấp một cơ chế ngay khi khai báo biến, bạn phải chỉ rõ biến đó được phép <code>null</code> hay là không. Có 2 trường hợp được phép đó là : không thể <code>null</code> và có thể <code>null</code><br>
 Nếu bạn muốn nó là <code>null</code>, hãy sử dụng dấu <code>?</code> vào sau kiểu.<br>
 Khai báo 1 biến cho phép <code>null</code>:</p>
-<pre><code>    var b: String? = &quot;abc&quot;
-    b = null // compilation ok
-    val l = b.length // not safe
+<pre><code>var b: String? = &quot;abc&quot;
+b = null // compilation ok
+val l = b.length // not safe
 </code></pre>
 <p>Khai báo 1 biến không được phép <code>null</code>:</p>
-<pre><code>    var a: String = &quot;abc&quot;
-    a = null // compilation error
-    val l = a.length // safe
+<pre><code>var a: String = &quot;abc&quot;
+a = null // compilation error
+val l = a.length // safe
 </code></pre>
 <h5><a id="Safe_call_270"></a>Safe call</h5>
 <p>Để tương tác với một object có thể <code>null</code> 1 cách dễ dàng, sử dụng dấu <code>?</code> cho phép bạn lấy giá trị của object chỉ khi nó tồn tại, nếu không nó sẽ bỏ qua và chương trình sẽ vẫn chạy như thường:</p>
-<pre><code>    val len = b?.length
+<pre><code>val len = b?.length
 </code></pre>
 <h4><a id="K_tha_v_override_276"></a>Kế thừa và override</h4>
 <p>Mặc định class trong <code>Kotlin</code> đều là <code>final</code>(tức là không được phép kế thừa):</p>
-<pre><code>    open class Base {
-        open fun v() {}
-        fun nv() {}
-    }
+<pre><code>open class Base {
+    open fun v() {}
+    fun nv() {}
+}
 </code></pre>
-<pre><code>    class Derived() : Base() {
-        override fun v() {}
+<pre><code>class Derived() : Base() {
+    override fun v() {}
 }
 </code></pre>
 <p>Trong class <code>final</code>(tức là không có từ khóa <code>“open”</code>) thì việc khai báo các hàm, thuộc tính <code>open</code> bị cấm.<br>
 Ở 1 lớp con khác, hàm được đánh dấu là <code>override</code> thì chính nó là <code>open</code>(lại được kế thừa từ lớp khác), nếu muốn không cho <code>override</code> thì lại sử dụng từ khóa <code>final</code>:</p>
-<pre><code>    open class AnotherDerived() : Base() {
-        final override fun v() {}
-    }
+<pre><code>open class AnotherDerived() : Base() {
+    final override fun v() {}
+}
 </code></pre>
 <p>Trong <code>interface</code>, các member của <code>interface</code> mặc định là <code>“open”</code>:</p>
-<pre><code>    interface B {
-        fun f() { print(&quot;B&quot;) } // interface members are 'open' by default
-        fun b() { print(&quot;b&quot;) }
-    }
+<pre><code>interface B {
+    fun f() { print(&quot;B&quot;) } // interface members are 'open' by default
+    fun b() { print(&quot;b&quot;) }
+}
 </code></pre>
 <p><code>Kotlin</code> implement <code>interface</code>:</p>
-<pre><code>    class C() : A(), B {
-        // The compiler requires f() to be overridden:
-        override fun f() {
-        super&lt;A&gt;.f() // call to A.f()
-        super&lt;B&gt;.f() // call to B.f()
-        }
+<pre><code>class C() : A(), B {
+    // The compiler requires f() to be overridden:
+    override fun f() {
+    super&lt;A&gt;.f() // call to A.f()
+    super&lt;B&gt;.f() // call to B.f()
     }
+}
 </code></pre>
 <h4><a id="Data_class_313"></a>Data class</h4>
 <p>Trong <code>Java</code>, chúng ta thường tạo ra các class chỉ để chứa data (JavaBean). Những class này được <code>Kotlin</code>thể hiện bằng data class:</p>
-<pre><code>    data class Money(val amount: Int, val currency: String)
+<pre><code>data class Money(val amount: Int, val currency: String)
 </code></pre>
 <p>Chỉ với 1 dòng code như trên sẽ tương đương với 1 class trong Java như sau:</p>
-<pre><code>    public class JavaMoney {
-        private int amount;
-        private String currency;
+<pre><code>public class JavaMoney {
+    private int amount;
+    private String currency;
 
-        public JavaMoney(int amount, String currency) {
-            this.amount = amount;
-            this.currency = currency;
-        }
-
-        public int getAmount() {
-            return amount;
-        }
-
-        public void setAmount(int amount) {
-            this.amount = amount;
-        }
-
-        public String getCurrency() {
-            return currency;
-        }
-
-        public void setCurrency(String currency) {
-            this.currency = currency;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            return super.equals(obj);
-        }
-
-        @Override
-        public int hashCode() {
-            return super.hashCode();
-        }
-
-        @Override
-        protected Object clone() throws CloneNotSupportedException {
-            return super.clone();
-        }
-
-        @Override
-        public String toString() {
-            return &quot;JavaMoney{&quot; +
-                    &quot;amount=&quot; + amount +
-                    &quot;, currency='&quot; + currency + '\'' +
-                    '}';
-        }
+    public JavaMoney(int amount, String currency) {
+        this.amount = amount;
+        this.currency = currency;
     }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public String toString() {
+        return &quot;JavaMoney{&quot; +
+                &quot;amount=&quot; + amount +
+                &quot;, currency='&quot; + currency + '\'' +
+                '}';
+    }
+}
 </code></pre>
 <p><code>Kotlin</code> sẽ tự động thêm cho chúng ta các hàm utility như <code>equals()</code>, <code>hashCode()</code>, <code>toString()</code> và <code>copy()</code>.</p>
 <h4><a id="Functional_support_Lambda_Expression_370"></a>Functional support (Lambda Expression)</h4>
