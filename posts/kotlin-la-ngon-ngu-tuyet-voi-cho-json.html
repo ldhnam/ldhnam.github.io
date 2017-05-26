@@ -1,0 +1,71 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Untitled Document.md</title><style></style></head><body id="preview">
+<p>Mặc dù nó có gồ ghề, tôi thực sự thích JSON. Thật dễ dàng để đọc, khá nhanh để phân tích cú pháp và đơn giản một cách mới mẻ. Dưới đây là một API mẫu của GitHub:</p>
+<pre><code>{
+  &quot;url&quot;: &quot;https://api.github.com/repos/square/okio/issues/156&quot;,
+  &quot;id&quot;: 91393390,
+  &quot;number&quot;: 156,
+  &quot;title&quot;: &quot;ByteString CharSequence idea&quot;,
+  &quot;state&quot;: &quot;open&quot;,
+  &quot;created_at&quot;: &quot;2015-06-27T00:49:40.000Z&quot;,
+  &quot;body&quot;: &quot;Let's make CharSequence that's backed by bytes.\n&quot;
+}
+</code></pre>
+<p>Các lớp dữ liệu không thay đổi của <code>Kotlin</code> làm cho nó dễ dàng để xây dựng một model cơ bản cho JSON này.</p>
+<pre><code>data class Issue(
+    val url: String,
+    val id: Long,
+    val number: Long,
+    val title: String,
+    val state: String,
+    val created_at: String,
+    val body: String)
+</code></pre>
+<p>Chính là nó. Không có <code>equals()</code>, <code>hashCode()</code>, hoặc <code>toString()</code> boilerplate (bản mẫu). Chúng ta thậm chí không cần một <code>builder</code>! Hãy mở rộng model để tận dụng các giá trị mặc định của <code>Kotlin</code> và <code>nulls</code> rõ ràng:</p>
+<pre><code>data class Issue(
+    val url: String,
+    val id: Long,
+    val number: Long,
+    val title: String,
+    val comments: Long = 0L,
+    val created_at: String,
+    val closed_at: String?,
+    val body: String = &quot;&quot;)
+</code></pre>
+<p>Các giá trị mặc định được điền vào khi decode <code>JSON</code> từ network. Tôi thích rằng tôi có thể để chúng tạo ra khi tạo sample data trong các test cases của tôi. Các loại <code>nullable</code> rõ ràng để ngăn ngừa các vấn đề về data.<br>
+Hôm nay chúng tôi sẽ release <strong>Moshi 1.5</strong> với sự hỗ trợ mạnh mẽ của <code>Kotlin</code> thông qua module <code>moshi-kotlin</code>. Moshi kiểu adapters và annotation bind JSON thành một idiomatic data model.</p>
+<pre><code>data class Issue(
+    val url: String,
+    val id: Long,
+    val number: Long,
+    val title: String,
+    val state: IssueState,
+    val comments: Long = 0L,
+    @Json(name = &quot;created_at&quot;) val createdAt: Date,
+    @Json(name = &quot;closed_at&quot;) val closedAt: Date?,
+    val body: String = &quot;&quot;)
+</code></pre>
+<p>Class này sử dụng các kiểu phù hợp thay vì chuỗi cho state và timestamps. Annotation <code>@Json</code> maps với tên <code>snake_case</code>  trong JSON thành thuộc tên thuộc tính <code>camelCase</code> trong <code>Kotlin</code>.<br>
+Để thiết lập điều này chúng ta cần một <code>Moshi.Builder</code> and a <code>JsonAdapter</code>. Tôi có thể sử dụng chuỗi của <code>Kotlin</code> để nhúng một sample message ngay trong code.</p>
+<pre><code>val issueJson = &quot;&quot;&quot;
+{
+  &quot;url&quot;: &quot;https://api.github.com/repos/square/okio/issues/156&quot;,
+  &quot;id&quot;: 91393390,
+  &quot;number&quot;: 156,
+  &quot;title&quot;: &quot;ByteString CharSequence idea&quot;,
+  &quot;state&quot;: &quot;open&quot;,
+  &quot;created_at&quot;: &quot;2015-06-27T00:49:40.000Z&quot;
+}
+&quot;&quot;&quot;
+val moshi = Moshi.Builder()
+    .add(KotlinJsonAdapterFactory())
+    .add(Date::class.java, Rfc3339DateJsonAdapter().nullSafe())
+    .build()
+val issueAdapter = moshi.adapter(Issue::class.java)
+val issue = issueAdapter.fromJson(issueJson)
+</code></pre>
+<p>Nếu bạn sử dụng JSON, <strong>Moshi</strong> và <strong>Kotlin</strong> giúp bạn build model tốt hơn với ít code hơn. Ghi chú rằng <code>moshi-kotlin</code> sử dụng <code>kotlin-reflect</code> cho việc binding property. Dependency lớn theo tiêu chuẩn của Android (1.7 MiB / 11,500 methods). Chúng tôi đang nghĩ đến cách sáng tạo để giải quyết điều đó!</p>
+<p>Đây đăng này là một phần của loạt bài &quot;<a href="https://medium.com/square-corner-blog/square-open-source-loves-kotlin-c57c21710a17">Square Open Source ♥s Kotlin</a>&quot;.</p>
+<h3><a id="References_73"></a>References</h3>
+<p><a href="https://medium.com/square-corner-blog/kotlins-a-great-language-for-json-fcd6ef99256b">https://medium.com/square-corner-blog/kotlins-a-great-language-for-json-fcd6ef99256b</a></p>
+
+</body></html>
