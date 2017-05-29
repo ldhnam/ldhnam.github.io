@@ -48,7 +48,7 @@ data class Issue(
     val body: String = "")
 ```
 Class này sử dụng các kiểu phù hợp thay vì chuỗi cho state và timestamps. Annotation `@Json` maps với tên `snake_case`  trong JSON thành thuộc tên thuộc tính `camelCase` trong `Kotlin`.
-Để thiết lập điều này chúng ta cần một `Moshi.Builder` and a `JsonAdapter`. Tôi có thể sử dụng chuỗi của `Kotlin` để nhúng một sample message ngay trong code.
+Để thiết lập điều này chúng ta cần một `Moshi.Builder` và một `JsonAdapter`. Tôi có thể sử dụng chuỗi của `Kotlin` để nhúng một sample message ngay trong code.
 ```
 val issueJson = """
 {
@@ -71,5 +71,5 @@ Nếu bạn sử dụng JSON, __Moshi__ và __Kotlin__ giúp bạn build model t
 
 Đây đăng này là một phần của loạt bài "[Square Open Source ♥s Kotlin](https://medium.com/square-corner-blog/square-open-source-loves-kotlin-c57c21710a17)".
 
-### References
+### Reference
 [https://medium.com/square-corner-blog/kotlins-a-great-language-for-json-fcd6ef99256b](https://medium.com/square-corner-blog/kotlins-a-great-language-for-json-fcd6ef99256b)
