@@ -1,4 +1,4 @@
-# Kotlin và Android
+# Kotlin & Android
 
 \- [Kotlin là ngôn ngữ tuyệt vời cho JSON](#kotlin-la-ngon-ngu-tuyet-voi-cho-json)
 
