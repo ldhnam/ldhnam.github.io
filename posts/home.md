@@ -1,6 +1,6 @@
 # Kotlin & Android
 
-\- [Giới thiệu Room và sử dụng Room với RxJava và Kotlin](#su-dung-room-voi-kotlin-va-rxjava2.md)
+\- [Giới thiệu Room và sử dụng Room với RxJava và Kotlin](#su-dung-room-voi-kotlin-va-rxjava2)
 
 \- [Implementation vs api dependency](#implementation-vs-api-dependency)
 
