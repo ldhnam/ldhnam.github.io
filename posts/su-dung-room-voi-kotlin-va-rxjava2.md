@@ -1,3 +1,5 @@
+# Sử dụng Room với Kotlin và RxJava 2
+
 >Room được Google giới thiệu tại Google I/O 2017. Room cung cấp một lớp abstraction cho SQLite cho phép truy cập database một cách trôi chảy trong khi tận dụng hết sức mạnh của SQLite.
 
 Core famework của `Room` cung cấp một sự hỗ trợ built-in để làm việc với SQL thô. Mặc dù các API này rất mạnh nhưng chúng khá low-level và đòi hỏi rất nhiều thời gian và công sức để sử dụng:

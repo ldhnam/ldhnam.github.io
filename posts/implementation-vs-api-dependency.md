@@ -1,3 +1,5 @@
+# Implementation với API Dependency
+
 ![Android Studio](/img/androidstudio3.png)
 
 Việc nâng lên Android Studio 3.0 sẽ làm cho việc build các dự án với nhiều module nhanh hơn rất nhiều, nhưng nó cũng có nghĩa là API của Gradle không may đã bị thay đổi.

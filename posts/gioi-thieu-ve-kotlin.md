@@ -1,3 +1,5 @@
+# Giới thiệu về Kotlin
+
 ### Kotlin Language là gì ?
 
 `Kotlin` là một ngôn ngữ ngữ kiểu tĩnh dành cho `Java Virtual Machine`. Nó được tạo ra bởi `JetBrains`, `Kotlin` sẽ chạy trên JVM và sử dụng các công cụ và thư viện hiện có của `Java`. Và ngược lại `Java` cũng có thể sử dụng các item được xây dựng trong `Kotlin`.
