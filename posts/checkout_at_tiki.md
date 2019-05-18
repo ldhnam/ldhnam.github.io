@@ -3,7 +3,7 @@ Vậy là sau hơn 1 năm gắn bó và làm việc ở Tiki ở vị trí Softw
 
  Có thể hiểu đơn giản Checkout & Payment là một flow đi từ lúc bạn add sản phẩm vào giỏ hàng và thanh toán, đây cũng chính là thành phần quan trọng nhất trong một hệ thống E-Commerce. Dưới đây là checkout flow detail ở Tiki
  
- ![Checkout Flow Detail at Tiki](../img/checkout_flow.png)
+ ![Checkout Flow Detail at Tiki](../img/checkout_detail_at_tiki.png)
  
  Chính vì vậy Checkout phải đáp ứng các requirement sau:
   * Single responsibility, high availability, low latency.
@@ -22,7 +22,7 @@ Cart Processing là một component cực kỳ phức tạp bao gồm: insert/up
 
 Các bạn có bao giờ bạn add sản phẩm vào giỏ hàng và rất lâu sau đó 1 ngày hoặc có thể 1 tháng bạn vào lại giỏ hàng mà vẫn nhìn thấy sản phẩm trong giỏ hàng vẫn còn y nguyên? Có hai cách là lưu giỏ hàng xuống một RDBMS hoặc NoSQL và ở Tiki đã và đang dùng hai cách trên.
 
-RDBMS: Tiki đã từng dùng MySQL để lưu cart info (product, shipping address, payment info) nhưng do số lượng write và read quá cao khi customer request get cart info hệ thống sẽ tính toán lại và update lại vào DB điều đó làm cho hệ thống không thể extendable.
+RDBMS: Tiki đã từng dùng MySQL để lưu cart info (product, shipping address, payment info) nhưng do số lượng write và read quá cao khi customer request get cart info hệ thống sẽ tính toán lại và update lại vào DB điều đó làm cho hệ thống không thể scaleable.
 
 NoSQL: Tiki hiện tại đang dùng MongoDB để lưu info của cart. Vì sao Tiki lại dùng MongoDB để lưu thì mình nói trong một bài viết khác.
 
