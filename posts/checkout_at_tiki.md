@@ -3,7 +3,7 @@ Vậy là sau hơn 1 năm gắn bó và làm việc ở Tiki ở vị trí Softw
 
  Có thể hiểu đơn giản Checkout & Payment là một flow đi từ lúc bạn add sản phẩm vào giỏ hàng và thanh toán, đây cũng chính là thành phần quan trọng nhất trong một hệ thống E-Commerce. Dưới đây là checkout flow detail ở Tiki
  
- ![Checkout Flow Detail at Tiki](../img/checkout_detail_at_tiki.png)
+ ![Checkout Flow Detail at Tiki](../img/checkout_flow.png)
  
  Chính vì vậy Checkout phải đáp ứng các requirement sau:
   * Single responsibility, high availability, low latency.
