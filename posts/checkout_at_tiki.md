@@ -11,6 +11,8 @@ Vậy là sau hơn 1 năm gắn bó và làm việc ở Tiki ở vị trí Softw
   * Support non-blocking, asynchronous, muli-threaded when needed.
   * Well-tested.
 
+**Continuing**
+
 
 <!--#### Cart Processing
 
