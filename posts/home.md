@@ -1,3 +1,3 @@
-# Software Engineer at Tiki.vn
+# Software Engineering at Tiki
 
-\- [Software Engineer at Tiki.vn](#software_engineer_at_tiki)
+\- [Checkout at Tiki](#checkout_at_tiki)
