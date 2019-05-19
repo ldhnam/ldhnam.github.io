@@ -2,12 +2,14 @@
 
 Vậy là sau hơn 1 năm gắn bó và làm việc ở Tiki ở vị trí Software Engineer (SE) cụ thể hơn là Back-End Engineer thuộc Checkout and Payment team. Đây là bài blog đầu tiên của mình sẽ chia sẻ business và technical của một hệ thống lớn E-Commerce ở Việt Nam về các vấn đề Cart Processing, Promotion, Payment, Deal Processing, Order Routing, Order Processing.
 
+Vì bài viết này khá dài nên mình sẽ update thường xuyên, rất mong các bạn thông cảm.
+
 ## 1. Checkout
 
  Có thể hiểu đơn giản Checkout & Payment là một flow đi từ lúc bạn add sản phẩm vào giỏ hàng và thanh toán, đây cũng chính là thành phần quan trọng nhất trong một hệ thống E-Commerce. Dưới đây là checkout flow ở Tiki:
- 
+
  ![Checkout Flow Detail at Tiki](../img/checkout_flow_at_tiki.png)
- 
+
  Chính vì vậy Checkout phải đáp ứng các requirement sau:
   * Single responsibility, high availability, low latency.
   * Scaleable, reuseable, extendable, maintainable.
@@ -17,7 +19,7 @@ Vậy là sau hơn 1 năm gắn bó và làm việc ở Tiki ở vị trí Softw
 **Continuing**
 
 
-<!--#### Cart Processing
+<!---#### Cart Processing
 
 Cart Processing là một component cực kỳ phức tạp bao gồm: insert/update/delete sản phẩm, tính toán và apply promotion.
 
