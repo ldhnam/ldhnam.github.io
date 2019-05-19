@@ -8,3 +8,8 @@
 - [# Difference between Array and ArrayLis](#knowledge.md)
 - [ Englis](#understanding-android-core-looper-handler-and-handlerthread.md)
 - [ Android & Kotli](#til.md)
+- [# Difference between Array and ArrayLis](#knowledge.md)
+- [ Englis](#understanding-android-core-looper-handler-and-handlerthread.md)
+- [Checkout at Tik](#checkout_at_tiki.md)
+- [ Given an array of integer, every element appears twice except for one. Find that single one](#algorithm.md)
+- [ Android & Kotli](#til.md)
