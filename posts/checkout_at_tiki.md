@@ -16,7 +16,7 @@ Vì bài viết này khá dài nên mình sẽ update thường xuyên, rất mo
   * Support non-blocking, asynchronous, muli-threaded when needed.
   * Well-tested.
 
-**Continuing**
+**To be continued**
 
 
 <!---#### Cart Processing
