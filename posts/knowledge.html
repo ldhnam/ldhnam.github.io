@@ -21,7 +21,39 @@
             <div class="main">
                 <h3 id="difference-between-array-and-arraylist">Difference between Array and ArrayList</h3>
 <pre><code>* Array fixed size, ArrayList dynamic size
-</code></pre>
+</code></pre><h3 id="redis">Redis</h3>
+<p>Redis keys are expired in two ways: a passive way and an active way.
+A passive way: Client tries to access it and the key is found to be timed out.
+Redis does 10 times per second:</p>
+<ol>
+<li>Random 20 keys from the set of keys with an associated expire.</li>
+<li>Delete all keys found expired.</li>
+<li>If more than 25% of key were expired, start from again step 1.</li>
+</ol>
+<p>Redis complied with 32 target uses a lot less memory per key. To complie Redis as 32 bit binary use make 32bit. Redis uses hashes when possible</p>
+<h3 id="physical-and-virtual-memory">Physical and Virtual Memory</h3>
+<p>As the size of physical RAM is limited, so each process runs in its own memory sandbox - &quot;virtual address space&quot; known as <strong><em>Virtual Memory</em></strong></p>
+<p><strong><em>Address of a byte in this virtual address space is no longer the same as the address that processor places on the address bus.</em></strong></p>
+<p>Virtual memory space is divided into smaller regions called pages (4kB on most OS can be changed). Virtual memory doesn&#39;t store anything, it simply maps a program&#39;s address space onto the underlying physical memory.</p>
+<p><strong><em>Memory Allocator</em></strong></p>
+<blockquote>
+<p>If there is enough space in the heap to satisfy a memory request from our code, Memory allocator can fulfill the request without kernel involvement, else it enlarges heap via a system (brk) call, usually requesting a large block of memory. (For malloc large mean &gt; MMAP_THRESHOLD bytes -128 kB by default).</p>
+</blockquote>
+<h3 id="database">Database</h3>
+<h4 id="replication">Replication</h4>
+<p>Database replication refers to the frequent copying of data from one node—a database on a server—into another.
+The transaction can then choose to return a commit after writing to the WAL, but before writing to the main data files. Now, if the server crashes, on restart it can replay all changes on the WAL since the last checkpoint.</p>
+<h3 id="distributed-system">Distributed System</h3>
+<h3 id="amazon-elasticache">Amazon ElastiCache</h3>
+<h4 id="for-redis">For Redis</h4>
+<ul>
+<li>Automatic detection and recovery from cache node failures</li>
+<li>Redis (cluster mode enabled) support partitioning your data across up to 90 shards</li>
+</ul>
+<h3 id="api">API</h3>
+<p>API should be backward compatible, it&#39;s mean shoud not remove field just add more field.
+URL must be stable.</p>
+
             </div>
         </div>
 	    <div class="footer">

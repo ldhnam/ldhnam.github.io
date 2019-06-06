@@ -15,6 +15,7 @@ Vì bài viết này khá dài nên mình sẽ update thường xuyên, rất mo
   * Scaleable, reuseable, extendable, maintainable.
   * Support non-blocking, asynchronous, muli-threaded when needed.
   * Well-tested.
+  * Consistency
 
 **To be continued**
 
