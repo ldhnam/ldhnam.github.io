@@ -20,7 +20,7 @@ Vì bài viết này khá dài nên mình sẽ update thường xuyên, rất mo
 **To be continued**
 
 
-<!---#### Cart Processing
+---#### Cart Processing
 
 Cart Processing là một component cực kỳ phức tạp bao gồm: insert/update/delete sản phẩm, tính toán và apply promotion.
 
