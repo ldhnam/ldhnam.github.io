@@ -14,6 +14,10 @@ Ngủ dậy và tầm 9h30 hay 9h45 tùy vào tình hình traffic tới công ty
 
 Daily meeting
 
+#### 10:30am
+
+Check message, mail, task and coding
+
 #### 12am
 
 Ăn trưa
