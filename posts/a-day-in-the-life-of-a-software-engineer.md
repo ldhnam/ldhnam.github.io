@@ -1,3 +1,5 @@
+# A day in the life of a Software Engineer
+
 Mình viết nhờ anh EM share bài này của engineer tại Slack: https://slack.engineering/a-day-in-the-life-of-a-backend-product-engineer-at-slack/ và cũng có đứa em vừa viết bài: https://tuhuynh.com/routine/ nên mình quyết định viết theo (gọi là ăn theo thì đúng hơn)
 
 #### 6am
